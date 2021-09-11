@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ECProject._Default" %>
+﻿<%@ Page Title="Welcome Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ECProject._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -8,6 +8,8 @@
 We stock a wide range of books from authors you’ve never heard of to those at the top of the game, such as J.R.R Tolkien and Brandon Sanderson </p>
     </div>
 
-    
+    <div id="CenterImage">
+        <img src ="ImageAssets/Tribal-Dragon_grey_bg.png" /> <!--TODO: Resize this photo plz!--> 
+    </div>
 
 </asp:Content>
