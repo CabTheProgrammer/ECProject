@@ -15,4 +15,9 @@ We stock a wide range of books from authors you’ve never heard of to those at 
     </div>
 
     <h2>Featured Books</h2>
+    <div id="center" style="align-content:center;">
+        <img src ="ImageAssets/book (3).jpg" style="text-align: center"/>
+        <img src ="ImageAssets/book (2).jpg"/>
+        <img src ="ImageAssets/book (1).jpg"/>
+    </div>
 </asp:Content>

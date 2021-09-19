@@ -2,6 +2,8 @@
 
 <!DOCTYPE html>
 
+
+
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
@@ -11,9 +13,11 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+      <!-- CSS HERE?-->
+    <link rel="stylesheet" href="style.css" /> 
 
 </head>
 <body>
@@ -51,12 +55,12 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">Products</a></li>
+                        <li><a runat="server" href="~/Products.aspx">Products</a></li>
                         <li><a runat="server" href="~/About">About Us</a></li>
                         <li><a runat="server" href="~/Contact">Contact Us</a></li>
-                        <li><a runat="server" href="~/Contact">Cart</a></li>
-                        <li><a runat="server" href="~/Contact">Register</a></li>
-                        <li><a runat="server" href="~/Contact">Login</a></li>
+                        <li><a runat="server" href="~/ComingSoon.aspx">Cart</a></li>
+                        <li><a runat="server" href="~/ComingSoon.aspx">Register</a></li>
+                        <li><a runat="server" href="~/ComingSoon.aspx">Login</a></li>
                     </ul>
                 </div>
             </div>
