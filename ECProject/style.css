@@ -1,5 +1,33 @@
-﻿body {
-    background-color: #EEE5E9;
-    color:pink;
+﻿* {
+    color: #000000;
+}
 
+body {
+    background-color: #EEE5E9;
+   
+}
+
+
+.book-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.book-shelf{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    flex:1;
+}
+
+.book{
+    display:flex;
+    flex:1,25%;
+    padding:2%;
+    margin-top: auto;
+    flex-direction:column;
+}
+
+.images{
+    max-width: 100%;
 }

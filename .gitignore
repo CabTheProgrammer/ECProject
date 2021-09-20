@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/ECProject/ImageAssets/.zip
+/ECProject/ImageAssets/images1.zip
