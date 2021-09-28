@@ -30,4 +30,10 @@ body {
 
 .images{
     max-width: 100%;
+    min-height:80%;
+}
+
+.center {
+    text-align: center;
+    display: block;
 }

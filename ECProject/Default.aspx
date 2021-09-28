@@ -8,16 +8,18 @@
 We stock a wide range of books from authors you’ve never heard of to those at the top of the game, such as J.R.R Tolkien and Brandon Sanderson </p>
     </div>
 
-    <div id="CenterImage">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--TODO: Resize this photo plz!--> 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src ="ImageAssets/Tribal-Dragon_grey_bg.png" height="200" width="240" />
+    <div class="center">
+    
+        <img src ="ImageAssets/Tribal-Dragon_grey_bg.png" class="img-responsive center-block" style="max-width:50%" />
     </div>
-
-    <h2>Featured Books</h2>
-    <div class="book-container">
-        <img src ="ImageAssets/book (3).jpg" style="text-align: center"/>
-        <img src ="ImageAssets/book (2).jpg"/>
-        <img src ="ImageAssets/book (1).jpg"/>
+    
+    
+    <div class ="container text-center d-flex justify-content-center flex-nowrap">
+        <h2>Featured Books</h2>
+        <div class="row  ">  
+            <img src="ImageAssets/book (3).jpg" class="center-block img-responsive col-md-2 mx-1" />
+            <img src="ImageAssets/book (2).jpg" class="center-block img-responsive col-md-2 mx-1" />
+            <img src="ImageAssets/book (1).jpg" class="center-block img-responsive col-md-2 mx-1" />
+        </div>
     </div>
 </asp:Content>

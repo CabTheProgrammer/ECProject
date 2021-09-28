@@ -13,11 +13,14 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <!--<webopt:bundlereference runat="server" path="~/Content/css" /> -->
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
       <!-- CSS HERE?-->
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <!-- <link rel="stylesheet" href="style.css" type="text/css" media="screen" runat="server"> --> 
 
 </head>
 <body>
@@ -46,9 +49,6 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Fantasy BookStore Online</a>
                 </div>
@@ -58,9 +58,13 @@
                         <li><a runat="server" href="~/Products.aspx">Products</a></li>
                         <li><a runat="server" href="~/About">About Us</a></li>
                         <li><a runat="server" href="~/Contact">Contact Us</a></li>
-                        <li><a runat="server" href="~/ComingSoon.aspx">Cart</a></li>
-                        <li><a runat="server" href="~/ComingSoon.aspx">Register</a></li>
-                        <li><a runat="server" href="~/ComingSoon.aspx">Login</a></li>
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a runat="server" href="~/ComingSoon"><span class="glyphicon glyphicon-user"></span> Sign Up</></a></li>
+                      <li><a runat="server" href="~/ComingSoon"><span class="glyphicon glyphicon-log-in"></span> Login</></a></li>
+                      <li><a runat="server" href="~/ComingSoon"><span class="glyphicon glyphicon-shopping-cart"></span>Cart &nbsp<span class ="badge">0</span></a></li>
+                   <!--TODO: Write code to make the cart badge dynamic -->
                     </ul>
                 </div>
             </div>
