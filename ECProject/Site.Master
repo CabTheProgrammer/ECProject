@@ -67,7 +67,7 @@
               <a class="nav-link" runat="server" href="~/Products.aspx">Products</a>
               <a class="nav-link" runat="server" href="~/About">About Us</a>
               <a class="nav-link" runat="server" href="~/Contact">Contact Us</a>
-              <a class="nav-link" runat="server" href="~/ComingSoon" >Sign Up</a>
+              <a class="nav-link" runat="server" href="~/SignUp">Sign Up</a>
               <a class="nav-link" runat="server" href="~/ComingSoon">Login</a> 
               <a class="nav-link" runat="server" href="~/ComingSoon">Cart</a><span class ="badge" style="color:black;">0</span>            
             </div>

@@ -72,13 +72,13 @@
 
     <div class="book-shelf container" style="background-color:pink;">
 
-       <div class ="row justify-content-center row-cols-4 g-12" >
+       <div class ="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4 g-5" >
             <div class ="book col">
             <a href ="ProductPage.aspx">
                 <img src ="ImageAssets/Books/book (1).png" class="img-fluid" />
             </a>
                 Price: $50
-                </div>
+               </div>
        
            
 
