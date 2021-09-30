@@ -13,5 +13,14 @@ namespace ECProject
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int a = int.TryParse(DropDownList1.SelectedValue, out a) ? a : 0;
+            User Bill = new User();//TODO: FIX THIS URGENTLY!!
+            Bill.additemtoCart("Chicken",a);
+
+
+        }
     }
 }
