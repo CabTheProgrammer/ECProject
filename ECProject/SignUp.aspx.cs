@@ -25,7 +25,7 @@ namespace ECProject
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-           Response.Redirect("Products.aspx");
+            Response.Redirect("Products.aspx");
         }
     }
 

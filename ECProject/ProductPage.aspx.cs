@@ -16,10 +16,9 @@ namespace ECProject
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int a = int.TryParse(DropDownList1.SelectedValue, out a) ? a : 0;
-            User Bill = new User();//TODO: FIX THIS URGENTLY!!
-            Bill.additemtoCart("Chicken",a);
-
+            int a = int.TryParse(DropDownList1.SelectedValue, out a) ? a : 0; // Converts the dropdown list number to an int
+            Cart.addCart("The Frost Eater", a); // adds the number and the product id to a dictionary
+            Response.Redirect(Request.RawUrl);
 
         }
     }

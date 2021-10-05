@@ -39,8 +39,6 @@
                 <asp:ListItem>5</asp:ListItem>
             </asp:DropDownList><br /><br />
 
-
-            <asp:Button ID="Button1" runat="server" Text="Buy It Now" class="btn btn-primary" /> &nbsp
             <asp:Button ID="Button2" runat="server" Text="Add to Cart" class="btn btn-primary" onClick="Button1_Click" />
         </div>
 

@@ -9,25 +9,15 @@ using System.Web.SessionState;
 
 namespace ECProject
 {
-    public class Cart
+   
+    
+    public static class Cart
     {
-        Dictionary<string, int> ShoppingCart = new Dictionary<string, int> ();
+        public static Dictionary<string, int> ShoppingCart = new Dictionary<string, int> ();
         //https://www.c-sharpcorner.com/UploadFile/mahesh/dictionary-in-C-Sharp/
-        void addCart(string pid, int qnt) // Product data is to be stored on the database
+        public static void addCart(string pid, int qnt) // Product data is to be stored on the database
         {
-            ShoppingCart.Add(pid, qnt);
-        }
-    }
-    /*
-    public class User
-    {
-        string name ="Bob";
-        string password = "password";
-        Dictionary<string, int> ShoppingCart = new Dictionary<string, int>();        
-        void additemtoCart(string pid,int qnt)
-        {
-
-            if(!ShoppingCart.ContainsKey(pid)) //Does this do the same thing as below? Lets see
+            if (!ShoppingCart.ContainsKey(pid)) //Does this do the same thing as below? Lets see
             {
                 ShoppingCart[pid] = qnt;
             }
@@ -36,33 +26,19 @@ namespace ECProject
                 ShoppingCart[pid] = ShoppingCart[pid] + qnt;
                 return;
             }
-
-
-
-
-
-            /*
-            //search for item
-            foreach(KeyValuePair<string,int> item in ShoppingCart)
-            {
-                if(item.Key == pid) //Searches to see if item exists in Shopping Cart. 
-                {
-                    int temp = item.Value+qnt;
-                    ShoppingCart.Remove(item.Key);
-                    ShoppingCart.Add(pid, temp);
-                    return;
-                    // If it does, it will remove the old key and value and replace it with an updated one with the new quantity bought by user.
-                }
-            }
-            //If it is a new item, we will just add it.
-            ShoppingCart.Add(pid, qnt);
-            return;
-           
         }
-        
+        public static void removeItem(string itemid, int qnty) // Removes a certain quantity from the shopping cart
+        {
+            if(ShoppingCart.ContainsKey(itemid)==true)
+            {
+                if (ShoppingCart[itemid] - qnty < 0)
+                    ShoppingCart[itemid] = 0;
+                else
+                    ShoppingCart[itemid] = ShoppingCart[itemid] - qnty;
+            }
+        }
     }
 
-*/
     public class Global : HttpApplication
     {
         void Application_Start(object sender, EventArgs e)
@@ -71,7 +47,27 @@ namespace ECProject
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            User Bill;
+           
+
         }
+
+
+        
+        public void additemtoCart(string pid, int qnt)
+        {
+            Dictionary <string, int> temp = (Dictionary<string,int>)Session["ShoppingCart"];
+            if (!temp.ContainsKey(pid)) //Does this do the same thing as below? Lets see
+            {
+                temp[pid] = qnt;
+            }
+            else
+            {
+                temp[pid] = temp[pid] + qnt;
+                return;
+            }
+            Session["ShoppingCart"] = temp;
+        }
+
+       
     }
 }
