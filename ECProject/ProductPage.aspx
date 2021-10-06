@@ -29,7 +29,8 @@
                     <p> Krey and Nora can’t save her, Zeisha may lose herself forever.</p>
 
             </div>
-             <h4><div class ="price"><b>Price: </b>$50.00 <b>Category: </b>Urban Fantasy <b>ISBN: </b> 1-56619-909-3</div></h4>
+             <h4><div class ="price"><b>
+                 Price: </b>$<asp:Label ID="Label1" runat="server" Text="50"></asp:Label> <b>Category: </b>Urban Fantasy <b>ISBN: </b> 1-56619-909-3</div></h4>
             <asp:Label runat="server" Text="Quantity"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server">
                 <asp:ListItem>1</asp:ListItem>
