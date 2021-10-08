@@ -6,21 +6,91 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data;
+
+
 
 namespace ECProject
 {
+
+
+
+    public static class NewCart
+    {
+        public static DataTable CartTable = new DataTable("CartTable");
+
+        public static DataTable MakeDataTable()
+        {
+            //static DataSet Table;
+
+            DataColumn ID = new DataColumn("ID");
+            DataColumn Qty = new DataColumn("Quantity");
+            DataColumn Prc = new DataColumn("Price");
+
+            //For each column in the shopping cart
+            ID.DataType = System.Type.GetType("System.String");
+            Qty.DataType = System.Type.GetType("System.Int32");
+            Prc.DataType = System.Type.GetType("System.Decimal");
+
+            CartTable.Columns.Add(ID);
+            CartTable.Columns.Add(Qty);
+            CartTable.Columns.Add(Prc);
+
+            return CartTable;
+        }
+
+        public static void AddtoCart(string id, int qnt, float price)
+        {
+            DataRow row = CartTable.NewRow();
+            row["ID"] = id;
+            row["Quantity"] = qnt;
+            row["Price"] = price;
+            CartTable.Rows.Add(row);
+
+        }
+
+
+    }
+
+
+    public struct iteminfo2
+    {
+        public string id;
+        public int quantity;
+        public float price;
+    }
+
+    public static class Cart2
+    {
+        static iteminfo2[] Scart;
+
+        static void addCart(string id, int quantity, float price)
+        {
+            //checks if the item exists in the cart
+            for (int i = 0; i <= Scart.Length; i++)
+            {
+                if (String.Equals(Scart[i].id, id))
+                {
+                    Scart[i].quantity = Scart[i].quantity + quantity;
+                    return;
+                }
+            }
+            //otherwise create a new item in the array.
+
+        }
+    }
 
     public struct iteminfo
     {
         public float price;
         public int qnty;
-
     }
+
+
 
     public static class Cart
     {
-        
-        public static Dictionary<string, iteminfo> ShoppingCart = new Dictionary<string, iteminfo> ();
+        public static Dictionary<string, iteminfo> ShoppingCart = new Dictionary<string, iteminfo>();
         //https://www.c-sharpcorner.com/UploadFile/mahesh/dictionary-in-C-Sharp/
 
         public static void addCart(string pid, int qnt)//This one is just for the shopping page; the price of the item is known
@@ -28,10 +98,12 @@ namespace ECProject
             iteminfo temp;
             if (ShoppingCart.ContainsKey(pid)) //Does this do the same thing as below? Lets see
             {
-                temp.qnty = qnt+1;
+                temp.qnty = qnt + 1;
                 temp.price = ShoppingCart[pid].price;
 
                 ShoppingCart[pid] = temp;
+
+
             }
 
         }
@@ -45,7 +117,7 @@ namespace ECProject
                 temp.price = price;
 
                 ShoppingCart[pid] = temp;
-               
+
             }
             else
             {
@@ -59,18 +131,18 @@ namespace ECProject
         public static void removeItem(string itemid, int qnt) // Removes a certain quantity from the shopping cart
         {
             iteminfo temp;
-            if(ShoppingCart.ContainsKey(itemid)==true)
+            if (ShoppingCart.ContainsKey(itemid) == true)
             {
                 if (ShoppingCart[itemid].qnty - qnt < 0)
                     ShoppingCart.Remove(itemid);
                 else
                 {
                     temp.price = ShoppingCart[itemid].price;
-                    temp.qnty = ShoppingCart[itemid].qnty -qnt;
+                    temp.qnty = ShoppingCart[itemid].qnty - qnt;
 
                     ShoppingCart[itemid] = temp;
                 }
-                    
+
             }
         }
     }
@@ -82,14 +154,18 @@ namespace ECProject
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-          
 
+            NewCart.MakeDataTable();
 
         }
 
 
-    
 
-       
+
+
+
     }
 }
+
+
+  
