@@ -12,8 +12,8 @@ namespace ECProject
         protected void Page_Load(object sender, EventArgs e)
         {
             int cnt = 0;
-            foreach (KeyValuePair<string, iteminfo> item in Cart.ShoppingCart)
-                cnt = cnt + item.Value.qnty;
+            for(int i=0; i<NewCart.CartTable.Rows.Count;i++)
+                cnt = cnt + (int)NewCart.CartTable.Rows[i][1];
             Label1.Text = cnt.ToString();
         }
     }

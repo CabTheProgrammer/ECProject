@@ -19,10 +19,8 @@ namespace ECProject
         {
             float price = float.Parse(Label1.Text);
             int a = int.TryParse(DropDownList1.SelectedValue, out a) ? a : 0; // Converts the dropdown list number to an int
-            Cart.addCart("The Frost Eater", a, price); // adds the number and the product id to a dictionary
-            Cart.addCart("The Hot Eater", a, price); // adds the number and the product id to a dictionary
+           
             NewCart.AddtoCart("The Frost Eater", a, price);
-            NewCart.AddtoCart("Hot Eater", a, price);
             Response.Redirect(Request.RawUrl);
 
         }
