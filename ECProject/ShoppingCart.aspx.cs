@@ -47,7 +47,7 @@ namespace ECProject
                 GridView2.DataBind();
 
 
-
+                Label3.Text = "Total Price: $ "+ GrandTotal().ToString();
                 Label2.Text = "Total Price: $ " + total.ToString();
             
             }
@@ -77,7 +77,38 @@ namespace ECProject
             Cart.addCart(key, 1);
             Response.Redirect(Request.RawUrl);
         }
-       
+
+
+        public  void table_mod(int index, int qnt)
+        {
+            int value = (int)NewCart.CartTable.Rows[index][1];
+            float price =Convert.ToSingle(NewCart.CartTable.Rows[index][2]); //converts to single-precision floating-point
+
+            if ((value + qnt) <= 0) // Deletes row if value falls below zero
+                NewCart.CartTable.Rows[index].Delete();
+            else
+            {
+                NewCart.CartTable.Rows[index][1] = value + qnt; 
+                value= value + qnt;
+                NewCart.CartTable.Rows[index][3] = value * price;
+            }
+
+            Response.Redirect(Request.RawUrl);
+            
+        }
+
+        public  float  GrandTotal()
+        {
+            float total = 0;
+
+            for(int i=0;i<NewCart.CartTable.Rows.Count;i++)
+            {
+                float test = Convert.ToSingle(NewCart.CartTable.Rows[i][3]);
+                total = total+test;
+            }
+
+            return total;
+        }
 
 
 

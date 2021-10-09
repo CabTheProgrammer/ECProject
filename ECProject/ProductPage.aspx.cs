@@ -22,6 +22,7 @@ namespace ECProject
             Cart.addCart("The Frost Eater", a, price); // adds the number and the product id to a dictionary
             Cart.addCart("The Hot Eater", a, price); // adds the number and the product id to a dictionary
             NewCart.AddtoCart("The Frost Eater", a, price);
+            NewCart.AddtoCart("Hot Eater", a, price);
             Response.Redirect(Request.RawUrl);
 
         }

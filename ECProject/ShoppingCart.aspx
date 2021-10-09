@@ -5,8 +5,12 @@
         <h3>Shopping Cart</h3>
 
         <script runat ="server">
+
+            
+
             void GridView1_RowCommand(Object sender, GridViewCommandEventArgs e)
             {
+                
                 if (e.CommandName == "add")
                 {
                     int index = Convert.ToInt32(e.CommandArgument); // This gives us the index of the row
@@ -16,8 +20,28 @@
                 else if (e.CommandName == "remove")
                     Label2.Text = "PLZ";
             }
+
+
+            void GridView2_RowCommand(Object sender, GridViewCommandEventArgs e)
+            {
+
+                int index = Convert.ToInt32(e.CommandArgument); // This gives us the index of the rows
+                if (e.CommandName == "add")
+                {
+                    Label3.Text = index.ToString();
+                    table_mod(index, 1);
+                }
+                else
+                {
+                    Label3.Text = "PLZ";
+                    table_mod(index, -1);
+                }
+
+                
+            }
         </script>
 
+        
         <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         <asp:GridView ID="GridView1" runat="server" onRowCommand="GridView1_RowCommand" CellPadding="4" AlternatingRowStyle-Wrap="True" AlternatingRowStyle-VerticalAlign="NotSet" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" RowStyle-HorizontalAlign="Center"  datakeynames="Item" ForeColor="#333333" GridLines="None" > 
 <AlternatingRowStyle Wrap="True" BackColor="White"></AlternatingRowStyle>
@@ -70,7 +94,7 @@
         </asp:ListView>
         -->
 
-        <asp:GridView ID="GridView2" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView2" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" onRowCommand="GridView2_RowCommand">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="rem" Text="Remove" HeaderText="Modify" />
@@ -87,6 +111,6 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-       
+       <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>
