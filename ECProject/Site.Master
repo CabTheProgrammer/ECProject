@@ -71,12 +71,14 @@
               <a class="nav-link" runat="server" href="~/Products.aspx">Products</a>
               <a class="nav-link" runat="server" href="~/About">About Us</a>
               <a class="nav-link" runat="server" href="~/Contact">Contact Us</a>
+               
               <a class="nav-link" runat="server" href="~/SignUp">Sign Up  <i class="fas fa-user-plus"></i></a>
               <a class="nav-link" runat="server" href="~/Login">Login <i class="fas fa-sign-in-alt"></i></a> 
               <a class="nav-link" runat="server" href="~/ShoppingCart">Cart<span class="fa-layers fa-fw">
                                                          <i class="fas fa-shopping-cart fa-lg"></i>
                                                         <span class="fa-layers-counter"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span>
                                                       </span></a>
+                 <div class ="nav-link">&nbsp&nbsp&nbsp&nbsp Welcome,<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></div>
                    
             </div>
           </div>
@@ -86,33 +88,6 @@
    
 
 
-
-
-
-
-        <!--
-        <div class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Fantasy BookStore Online</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                      </button>
-
-                <div class="navbar-collapse collapse">
-                    <ul class=" navbar-nav">
-                      <li><a  class="nav-link" runat="server" href="~/">Home</a></li>
-                      <li><a  class="nav-link" runat="server" href="~/Products.aspx">Products</a></li>
-                      <li><a  class="nav-link" runat="server" href="~/About">About Us</a></li>
-                      <li><a  class="nav-link" runat="server" href="~/Contact">Contact Us</a></li>
-                      <li><a class="nav-link" runat="server" href="~/ComingSoon"><span class="glyphicon glyphicon-user"></span> Sign Up</></a></li>
-                      <li><a class="nav-link" runat="server" href="~/ComingSoon"><span class="glyphicon glyphicon-log-in"></span> Login</></a></li>
-                      <li><a class="nav-link" runat="server" href="~/ComingSoon"><span class="glyphicon glyphicon-shopping-cart"></span>Cart &nbsp<span class ="badge">0</span></a></li>
-                   <!--TODO: Write code to make the cart badge dynamic --><!--
-                    </ul>
-                </div>
-            </div>
-        </div>
-        -->
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

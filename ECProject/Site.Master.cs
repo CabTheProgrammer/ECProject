@@ -10,7 +10,12 @@ namespace ECProject
     public partial class SiteMaster : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {//TODO: Make a cookie for guest and load shopping cart else
+            Session["Username"] = "Guest";
+
+
+
+            Label2.Text = (string)Session["Username"];
             int cnt = 0;
             for(int i=0; i<NewCart.CartTable.Rows.Count;i++)
                 cnt = cnt + (int)NewCart.CartTable.Rows[i][1];

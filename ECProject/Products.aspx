@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>"The Hottest Ebooks Online"</h3>
     <div class="book-shelf container">
-
+        <!--
        <div class ="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-4 g-5" >
             <div class ="book col">
             <a href ="ProductPage.aspx">
@@ -62,8 +62,25 @@
                     Price: $20
                 </div>
             </div>
-        
+     
        
-      </div>
-    </div>
+      </div> -->
+
+
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProductsConnectionString %>" SelectCommand="SELECT * FROM [PRODUCT_INFO]"></asp:SqlDataSource>
+<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+    <ItemTemplate>
+         <div class ="row justify-content-center">
+             <img src=<%# Eval("IMG_LOCATION") %> class="img-fluid" style="max-width:25%;"/>             
+             <h4>Product Name: <%#DataBinder.Eval(Container,"DataItem.Name")%></h4>
+             <h4>Category: <%#DataBinder.Eval(Container,"DataItem.Category")%></h4>
+             <h4>Author: <%#DataBinder.Eval(Container,"DataItem.Author")%></h4>
+             <h4>Price: <%#DataBinder.Eval(Container,"DataItem.Price")%></h4>
+             <asp:Button ID="Button1" runat="server" Text="Buy Now" class ="btn btn-primary"/><br>
+         </div>                                              
+    </ItemTemplate>
+</asp:Repeater>
+
+    </div>  
 </asp:Content>
+

@@ -21,6 +21,8 @@ namespace ECProject
             int a = int.TryParse(DropDownList1.SelectedValue, out a) ? a : 0; // Converts the dropdown list number to an int
            
             NewCart.AddtoCart("The Frost Eater", a, price);
+            
+
             Response.Redirect(Request.RawUrl);
 
         }

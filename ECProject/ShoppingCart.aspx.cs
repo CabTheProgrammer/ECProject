@@ -32,9 +32,9 @@ namespace ECProject
                 NewCart.CartTable.Rows[index].Delete();
             else
             {
-                NewCart.CartTable.Rows[index][1] = value + qnt; 
+                NewCart.CartTable.Rows[index][1] = value + qnt;  //calculation for quantity
                 value= value + qnt;
-                NewCart.CartTable.Rows[index][3] = value * price;
+                NewCart.CartTable.Rows[index][3] = value * price; // calculation for sub-total
             }
 
             Response.Redirect(Request.RawUrl);
@@ -53,7 +53,5 @@ namespace ECProject
 
             return total;
         }
-
-
     }
 }
