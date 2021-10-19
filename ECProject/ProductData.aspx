@@ -10,6 +10,18 @@
         <asp:Label ID="Price" runat="server" Text="Label"></asp:Label>
         <asp:Label ID="Category" runat="server" Text="Label"></asp:Label>
         <asp:Label ID="ISBN" runat="server" Text="Label"></asp:Label>
+
+         <asp:Label runat="server" Text="Quantity"></asp:Label>
+          <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem>1</asp:ListItem>
+                <asp:ListItem>2</asp:ListItem>
+                <asp:ListItem>3</asp:ListItem>
+                <asp:ListItem>4</asp:ListItem>
+                <asp:ListItem>5</asp:ListItem>
+            </asp:DropDownList><br /><br />
+
+        <asp:Button ID="Button2" runat="server" Text="Add to Cart" class="btn btn-primary" onClick="Button1_Click" />
+
     </div>
 
 </asp:Content>

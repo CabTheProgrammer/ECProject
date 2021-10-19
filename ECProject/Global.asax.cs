@@ -75,8 +75,10 @@ namespace ECProject
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             NewCart.MakeDataTable(); //initializes datatable object for shopping cart
+            //Response.Cookies("VisitorID") = 49;
+            //Response.Cookies("VisitorID").Expires = "December 31, 2001";
 
-            
+
 
 
         }
