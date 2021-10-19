@@ -68,7 +68,7 @@
 
 
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProductsConnectionString %>" SelectCommand="SELECT * FROM [PRODUCT_INFO]"></asp:SqlDataSource>
-<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="Repeater1_ItemCommand">
     <ItemTemplate>
          <div class ="row justify-content-center">
              <img src=<%# Eval("IMG_LOCATION") %> class="img-fluid" style="max-width:25%;"/>             
@@ -76,11 +76,16 @@
              <h4>Category: <%#DataBinder.Eval(Container,"DataItem.Category")%></h4>
              <h4>Author: <%#DataBinder.Eval(Container,"DataItem.Author")%></h4>
              <h4>Price: <%#DataBinder.Eval(Container,"DataItem.Price")%></h4>
-             <asp:Button ID="Button1" runat="server" Text="Buy Now" class ="btn btn-primary"/><br>
+             <asp:Button ID="Button1" runat="server" Text="More Info" class ="btn btn-primary" CommandName="Select" CommandArgument=<%#Eval("ID") %>/><br>
          </div>                                              
     </ItemTemplate>
 </asp:Repeater>
 
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
     </div>  
+
+
+    
 </asp:Content>
 

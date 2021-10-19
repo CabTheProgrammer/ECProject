@@ -13,5 +13,16 @@ namespace ECProject
         {
 
         }
+
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            // Response.Redirect("ShoppingCart.aspx");
+            //(string)e.CommandArgument.ToString() + "command"
+            string stuff = e.CommandArgument.ToString();
+            Label1.Text = stuff;
+            Session["ID"] = stuff;
+           
+            Response.Redirect("ProductData.aspx");
+        }
     }
 }
