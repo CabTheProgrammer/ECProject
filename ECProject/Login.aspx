@@ -15,8 +15,13 @@
                 <asp:Button ID="Button2" runat="server" Text="Cancel" class ="btn btn-danger" onClick="Button2_Click"/>&nbsp
                 <asp:Button ID="Button1" runat="server" Text="Login" class="btn btn-success" onClick="Button1_Click"/>
             </div>
+        <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
     </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UserConnectionString %>" SelectCommand="SELECT * FROM [USER_DATA]"></asp:SqlDataSource>
 
+
+
+    
 
 
 

@@ -74,11 +74,13 @@
                
               <a class="nav-link" runat="server" href="~/SignUp">Sign Up  <i class="fas fa-user-plus"></i></a>
               <a class="nav-link" runat="server" href="~/Login">Login <i class="fas fa-sign-in-alt"></i></a> 
+              <a id="Logout" class="nav-link"  runat="server" onServerClick="logout">Logout <i class="fas fa-sign-out-alt"></i></a> 
+              <a id="AddProducts" class="nav-link" runat="server" href="~/Login">Add Products <i class="fas fa-plus-square"></i></a> 
               <a class="nav-link" runat="server" href="~/ShoppingCart">Cart<span class="fa-layers fa-fw">
                                                          <i class="fas fa-shopping-cart fa-lg"></i>
                                                         <span class="fa-layers-counter"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span>
                                                       </span></a>
-                 <div class ="nav-link">&nbsp&nbsp&nbsp&nbsp Welcome,<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></div>
+                 <div class ="nav-link">&nbsp&nbsp&nbsp&nbsp Welcome,<asp:Label ID="Username" runat="server" Text="Guest"></asp:Label></div>
                    
             </div>
           </div>

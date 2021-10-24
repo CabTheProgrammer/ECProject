@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ECProject
 {
@@ -15,10 +17,57 @@ namespace ECProject
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["UserName"] = TextBox1.Text;
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["UserConnectionString"].ConnectionString);
+            SqlCommand command;
+            SqlDataReader dataReader;
+            Session["Username"] = TextBox1.Text;
             Session["Password"] = TextBox2.Text;
 
-            Response.Redirect("~/Default.aspx");
+
+
+            SqlCommand cmd = new SqlCommand("select * from USER_DATA where Username=@username and Password=@word", conn);
+            cmd.Parameters.AddWithValue("@username", TextBox1.Text);
+            cmd.Parameters.AddWithValue("word", TextBox2.Text);
+
+            //string cmd = "SELECT usid from USER_DATA WHERE Username=" + Session["UserName"].ToString().Trim() +"AND Password="+Session["Password"].ToString().Trim();
+            conn.Open();
+
+            //command = new SqlCommand(cmd, conn);
+
+            dataReader = cmd.ExecuteReader();
+            
+            if(dataReader.HasRows==true)
+            {
+                if(dataReader.Read())
+                {
+                    Session["Password"] = null; //for security
+                    Session["UserID"] = dataReader.GetValue(1);
+                    Session["Username"] = dataReader.GetValue(2);
+                    if ((int)dataReader.GetValue(4) == 1)
+                        Session["IsAdmin"] = true;
+                    else
+                        Session["IsAdmin"] = false;
+
+                    dataReader.Read();
+                    dataReader.Close();
+                    conn.Close();
+                    Response.Redirect("~/Default.aspx");
+                }
+                else
+                {
+                    dataReader.Close();
+                    conn.Close();
+                    Label3.Text = "Incorrect Username or password";
+                    Label3.ForeColor = System.Drawing.Color.Red;
+                }
+                
+            }
+
+            Session["Username"] = "Guest";
+            dataReader.Close();
+            conn.Close();
+            Label3.Text = "Incorrect Username or password";
+            Label3.ForeColor = System.Drawing.Color.Red;
         }
 
         protected void Button2_Click(object sender, EventArgs e)
