@@ -30,6 +30,6 @@
         
         
 
-        <asp:Button ID="Button1" runat="server" Text="Add New Product" class="btn btn-success" style="margin-top:10px;"/>
+        <asp:Button ID="Button1" runat="server" Text="Add New Product" class="btn btn-success" onClick="Button1_Click" style="margin-top:10px;"/>
     </div>
 </asp:Content>

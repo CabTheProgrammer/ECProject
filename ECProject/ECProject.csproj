@@ -380,6 +380,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ImageAssets\" />
+    <Folder Include="Uploaded\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
