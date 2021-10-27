@@ -133,6 +133,7 @@
     <Content Include="ProductData.aspx" />
     <Content Include="ProductPage.aspx" />
     <Content Include="Products.aspx" />
+    <Content Include="RemoveProduct.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -341,6 +342,13 @@
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveProduct.aspx.cs">
+      <DependentUpon>RemoveProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RemoveProduct.aspx.designer.cs">
+      <DependentUpon>RemoveProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
