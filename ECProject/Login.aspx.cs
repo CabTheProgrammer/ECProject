@@ -18,7 +18,7 @@ namespace ECProject
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["UserConnectionString"].ConnectionString);
-            SqlCommand command;
+            //SqlCommand command;
             SqlDataReader dataReader;
             Session["Username"] = TextBox1.Text;
             Session["Password"] = TextBox2.Text;
@@ -41,16 +41,25 @@ namespace ECProject
                 if(dataReader.Read())
                 {
                     Session["Password"] = null; //for security
-                    Session["UserID"] = dataReader.GetValue(1);
-                    Session["Username"] = dataReader.GetValue(2);
+                    
+                    NewCart.UserID = dataReader.GetValue(1).ToString();
+                    NewCart.Username = Convert.ToString(dataReader.GetValue(2));
                     if ((int)dataReader.GetValue(4) == 1)
                         Session["IsAdmin"] = true;
                     else
                         Session["IsAdmin"] = false;
 
+                    if(NewCart.CartTable.Rows.Count>0)
+                    {
+                        for (int i = 0; i < NewCart.CartTable.Rows.Count; i++)
+                            NewCart.CartTable.Rows[i][4] = NewCart.UserID;
+                    }
+                    
+
                     dataReader.Read();
                     dataReader.Close();
                     conn.Close();
+                    //NewCart.LoadfromDatabase();
                     Response.Redirect("~/Default.aspx");
                 }
                 else
@@ -69,7 +78,7 @@ namespace ECProject
             Label3.Text = "Incorrect Username or password";
             Label3.ForeColor = System.Drawing.Color.Red;
         }
-
+        
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Default.aspx");
