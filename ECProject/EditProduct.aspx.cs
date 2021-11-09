@@ -21,7 +21,7 @@ namespace ECProject
             if (BookImage.HasFile)
             {
                 try
-                {
+                {//TODO: CHANGE TO RELATIVE REFERENCES!!!!!
 
                     //string InputFile = System.IO.Path.GetExtension(BookImage.FileName);
                     string addr = BookImage.FileName.Replace(" ", "");

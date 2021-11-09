@@ -40,7 +40,7 @@
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
        <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
-        <asp:Button ID="Button1" runat="server" Text="Clear Shein Cart" onClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" Text="Clear Cart" onClick="Button1_Click" />
 
     </div>
 </asp:Content>
